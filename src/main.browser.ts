@@ -1,22 +1,28 @@
 import './polyfills.browser';
-
+import { BrowserModule } from '@angular/platform-browser';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { NgModule, Component } from '@angular/core';
 import { AppModule } from './app/app.module';
+import { AppComponent } from './app/app.component';
+import { SharedModule } from './shared/shared.module';
+import { ToDoService } from './shared/todo.service';
 
-export const platformRef = platformBrowserDynamic();
-
-export function main() {
-  return platformRef.bootstrapModule(AppModule)
-    .catch(err => console.error(err));
+@NgModule({
+  bootstrap: [ AppComponent ],
+  imports: [
+    BrowserModule,
+    AppModule,
+    SharedModule.withProviders()
+  ]
+})
+class MainModule {
+  constructor(public todoservice: ToDoService) {
+    console.log('Main module created.');
+    todoservice.syncWithServer();
+  }
 }
 
-// support async tag or hmr
-switch (document.readyState) {
-  case 'interactive':
-  case 'complete':
-    main();
-    break;
-  case 'loading':
-  default:
-    document.addEventListener('DOMContentLoaded', () => main());
-}
+var platform = platformBrowserDynamic();
+
+platform.bootstrapModule(MainModule)
+.then( moduleRef => console.log('Bootstrapped.'));

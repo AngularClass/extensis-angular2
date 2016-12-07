@@ -11,6 +11,7 @@ import { ToDoService } from './shared/todo.service';
 import { Store } from './shared/store.service';
 import { LitterComponent } from './app/litter/litter.component';
 import { KittenDetailsComponent } from './app/litter/kitten-details/kitten-details.component';
+import { KittenGeneratorComponent } from './app/litter/kitten-generator/kitten-generator.component';
 import { Observable } from 'rxjs';
 
 @Injectable()
@@ -39,6 +40,10 @@ var routes: Route[] = [
   {
     path: '',
     component: HomeComponent
+  },
+  {
+    path: 'kittens/generate',
+    component: KittenGeneratorComponent
   },
   {
     path: 'kittens/:id',

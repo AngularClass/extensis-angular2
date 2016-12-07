@@ -23,7 +23,4 @@ export class KittenDetailsComponent {
       });
   }
 
-  ngOnInit() {
-    console.log('Kitten Init! ', this.kitten);
-  }
 } 

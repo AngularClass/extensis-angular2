@@ -2,6 +2,7 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { ToDoService } from './todo.service';
 import { FetchService } from './fetch.service';
@@ -18,7 +19,8 @@ var providers = [
 var modules = [
   CommonModule,
   HttpModule,
-  RouterModule
+  RouterModule,
+  ReactiveFormsModule
 ];
 
 var components = [];

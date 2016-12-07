@@ -3,12 +3,13 @@ import { SharedModule } from '../../shared/shared.module';
 
 import { LitterComponent } from './litter.component';
 import { KittenDetailsComponent } from './kitten-details/kitten-details.component';
-
+import { KittenGeneratorComponent } from './kitten-generator/kitten-generator.component';
 
 
 var components = [
   LitterComponent,
-  KittenDetailsComponent
+  KittenDetailsComponent,
+  KittenGeneratorComponent
 ];
 
 @NgModule({

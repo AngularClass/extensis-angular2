@@ -5,11 +5,13 @@ import { HttpModule } from '@angular/http';
 import { ToDoService } from './todo.service';
 import { FetchService } from './fetch.service';
 import { Store } from './store.service';
+import { ViewService } from './view.service';
 
 var providers = [
   ToDoService,
   FetchService,
-  Store
+  Store,
+  ViewService
 ];
 
 var modules = [

@@ -2,10 +2,12 @@ import { Component } from '@angular/core';
 import { ToDoService } from '../../shared/todo.service';
 import { AppState } from '../../shared/store.service';
 import { Task, TaskList } from '../../shared/models';
+import { ViewService } from '../../shared/view.service';
 
 @Component({
   selector: 'my-todo',
   template: `
+    <button (click)="toggleView()"> Toggle Meow Content </button>
     <input type="text" placeholder="input a task"
       (input)="inputDetector($event.target.value)"
       [value]="task"
@@ -27,11 +29,18 @@ export class MyToDoComponent {
   
 
 
-  constructor ( public toDoService: ToDoService ) {
+  constructor ( 
+    public toDoService: ToDoService, 
+    public viewService: ViewService
+  ) {
     this.toDoService.getChanges()
     .subscribe(data => {
       this.taskList = data;
     });
+  }
+
+  toggleView () {
+    this.viewService.toggleView('meow');
   }
 
   inputDetector ( value: string ) {

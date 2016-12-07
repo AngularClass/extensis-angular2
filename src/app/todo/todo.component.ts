@@ -6,6 +6,7 @@ import { Task, TaskList } from '../../shared/models';
 @Component({
   selector: 'my-todo',
   template: `
+    <button> Toggle Meow Component </button>
     <input type="text" placeholder="input a task"
       (input)="inputDetector($event.target.value)"
       [value]="task"

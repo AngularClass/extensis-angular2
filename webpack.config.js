@@ -59,13 +59,13 @@ var defaultConfig = {
   },
 
   devServer: {
-    // setup: function(app) {
-    //   // express middleware
-    //   app.get('/data.json', function(req, res) {
-    //     var json = require('./src/data.json');
-    //     res.json(json);
-    //   });
-    // },
+    setup: function(app) {
+      // express middleware
+      app.get('/data.json', function(req, res) {
+        var json = require('./src/data.json');
+        res.json(json);
+      });
+    },
     historyApiFallback: true,
     watchOptions: { aggregateTimeout: 300, poll: 1000 }
   },

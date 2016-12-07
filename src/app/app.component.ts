@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
     <my-todo>
       <meow></meow>
     </my-todo>
+    <router-outlet></router-outlet>
   `
 })
 export class AppComponent{}

@@ -1,13 +1,21 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Task } from './models';
+import { Task, Litter, Kitten } from './models';
 
 export interface AppState {
-  todos: Task[]
+  todos: Task[],
+  litter: Litter
 };
 
 var _defaultValue: AppState = {
-  todos: []
+  todos: [],
+  litter: new Litter([
+    new Kitten(1, 'bob'),
+    new Kitten(2, 'fluffy'),
+    new Kitten(3, 'stinky'),
+    new Kitten(4, 'Von Fuzzypantsenstein'),
+    new Kitten(5, 'Lisa')
+  ])
 };
 
 var _store = new BehaviorSubject(_defaultValue);

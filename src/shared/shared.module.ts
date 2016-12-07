@@ -1,6 +1,7 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
 
 import { ToDoService } from './todo.service';
 import { FetchService } from './fetch.service';
@@ -16,7 +17,8 @@ var providers = [
 
 var modules = [
   CommonModule,
-  HttpModule
+  HttpModule,
+  RouterModule
 ];
 
 var components = [];

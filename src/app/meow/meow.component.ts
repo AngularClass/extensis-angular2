@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { ViewService } from '../../shared/view.service';
 
 @Component({
@@ -14,15 +14,24 @@ import { ViewService } from '../../shared/view.service';
      </div>
   `
 })
-export class Meow {
+export class Meow implements OnDestroy {
   toggle = false;
-
+  listener;
   constructor(public viewService: ViewService ) {
-    this.viewService.getChanges('meow').subscribe(
+    this.init();
+  }
+
+  init () {
+    this.listener = this.viewService.getChanges('meow').subscribe(
       toggleValue => {
         this.toggle = toggleValue;
       }
     )
   }
+
+  ngOnDestroy () {
+    this.listener.unsubscribe();
+  }
+
 
 }

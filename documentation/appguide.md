@@ -25,3 +25,8 @@ Changelist:
   > */kitten-generator/kitten-upvote.component
 - Add a Nav Bar component
   > */navbar/navbar.component.ts
+
+### Misc
+*/meow/meow.component
+*/litter/kitten-generator/kitten-generator.component
+*/shared/shared.module

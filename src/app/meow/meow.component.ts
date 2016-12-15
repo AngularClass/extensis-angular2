@@ -33,5 +33,8 @@ export class Meow implements OnDestroy {
     this.listener.unsubscribe();
   }
 
-
+  /*  
+    Avoid writing imperatively in the constructor, it makes it hard to test.
+    Hence, there is an init function that is being called which makes it infinitely easier to test against.
+  */
 }

@@ -44,4 +44,21 @@ export class KittenGeneratorComponent {
 
     console.log(arguments);
   }
+
+  /*
+    Reminder: First button will trigger a submit.
+    Ng2 has modified the form tag, so you can capture the submit event there.event
+
+    It is possible to nest forms as well, just add formGroupName attribute:
+    <form [formGroup]="domain-a">
+      <field formGroupName="subset-of-a">
+
+    this.form = new FormGroup({
+      'domain-a': new FormControl...
+      'subdomain-of-a': new FormGroup(...)
+    });
+
+    More on dynamic forms: https://angular.io/docs/ts/latest/cookbook/dynamic-form.html
+    Bonus: https://angular.io/docs/ts/latest/api/forms/index/FormArray-class.html
+  */
 }

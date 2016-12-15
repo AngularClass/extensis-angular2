@@ -21,6 +21,10 @@ var modules = [
   HttpModule,
   RouterModule,
   ReactiveFormsModule
+  /*
+    Be mindful of what forms module you're importing and what directives
+    or functionalities you'll be using.
+  */
 ];
 
 var components = [];

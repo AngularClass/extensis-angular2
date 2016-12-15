@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 
 import { SharedModule } from '../../shared/shared.module';
-import { Meow } from './meow.component';
+import { NavBarComponent } from './navbar.component';
 
 var components = [
-  Meow
+  NavBarComponent
 ];
 
 @NgModule({
@@ -18,4 +18,4 @@ var components = [
     ...components
   ]
 })
-export class MeowModule {}
+export class NavBarModule {}

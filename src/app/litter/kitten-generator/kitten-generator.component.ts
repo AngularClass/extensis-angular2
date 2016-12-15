@@ -1,16 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators, ValidatorFn  } from '@angular/forms';
+import { checkId } from './kitten-generator.validator';
 
-var checkId: ValidatorFn = ( formControl ) => {
-
-  if(formControl.value.length > 3) {
-    return null;
-  } 
-
-  return {
-    minLength: true
-  };
-};
 
 @Component({
   selector: 'kitten-generator',
@@ -24,6 +15,7 @@ var checkId: ValidatorFn = ( formControl ) => {
       Name:
       <input type="text" formControlName="dave" placeholder="Kitten name goes here">
 
+      <kitten-upvote [form]="form" formControlName="upvote"></kitten-upvote>
       <button [disabled]="pending || !form.valid"> Create a kitten! </button>
     </form>
 
@@ -36,10 +28,11 @@ export class KittenGeneratorComponent {
   constructor () {
     this.form = new FormGroup({
       bob: new FormControl('', [checkId, Validators.required]),
-      dave: new FormControl('', Validators.required)
+      dave: new FormControl('', Validators.required),
+      upvote: new FormControl('')
     });
 
-    this.form.valueChanges.subscribe(data => console.log(this.form));
+    this.form.valueChanges.subscribe(data => console.log(data, this.form));
   }
 
   funTimes () {

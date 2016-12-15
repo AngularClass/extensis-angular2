@@ -1,7 +1,6 @@
-## angular2-seed
+## Angular 2 for Extensis
 
-A simple starter project demonstrating the basic concepts of Angular 2.
-
+The `documentation` folder will have guides for general app changes, designs, and practices as well as documentation for testing. In addition, I have littered comments throughout the code base explaining things as well as showcasing in pseudo code how they might work.
 
 ### Usage
 - Clone or fork this repository
@@ -12,3 +11,6 @@ A simple starter project demonstrating the basic concepts of Angular 2.
 - run `npm start` to fire up dev server
 - open browser to [`http://localhost:3000`](http://localhost:3000)
 - if you want to use other port, open `package.json` file, then change port in `--port 3000` script
+
+
+### Tests

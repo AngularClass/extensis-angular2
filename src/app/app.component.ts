@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app',
   template: `
     <nav-bar>
-      Hello Extensis. Glad it isn't snowing.
+      <div class="targ">Hello Extensis. Glad it isn't snowing.</div>
     </nav-bar>
     <my-todo>
       <meow></meow>

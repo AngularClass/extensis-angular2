@@ -48,6 +48,21 @@ var modules = [
   AccountManagementModule
 ];
 
+var _appModule = {
+  imports: [
+    ...modules,
+    NotFoundModule
+  ],
+  declarations: [
+    AppComponent
+  ],
+  exports: [
+    AppComponent,
+    ToDoModule,
+    MeowModule
+  ]
+};
+
 @NgModule({
   imports: [
     ...modules,
@@ -63,3 +78,5 @@ var modules = [
   ]
 })
 export class AppModule {}
+
+export var appModule = _appModule;

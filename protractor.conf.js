@@ -5,7 +5,7 @@
 var SpecReporter = require('jasmine-spec-reporter');
 
 exports.config = {
-  allScriptsTimeout: 250000,
+  allScriptsTimeout: 11000,
   specs: [
     './e2e/**/*.e2e-spec.ts'
   ],
@@ -13,21 +13,20 @@ exports.config = {
     'browserName': 'chrome'
   },
   directConnect: true,
-  baseUrl: 'https://localhost:300/',
+  baseUrl: 'http://localhost:3000/',
   framework: 'jasmine',
   jasmineNodeOpts: {
     showColors: true,
-    defaultTimeoutInterval: 100000,
+    defaultTimeoutInterval: 30000,
     print: function() {}
   },
   useAllAngular2AppRoots: true,
-  // beforeLaunch: function() { ... it's either this or vanilla js.
-  //   require('ts-node').register({
-  //     project: 'e2e'
-  //   });
-  // },
+  beforeLaunch: function() {
+    require('ts-node').register({
+      project: 'e2e'
+    });
+  },
   onPrepare: function() {
-    browser.ignoreSynchronization = true;
     jasmine.getEnv().addReporter(new SpecReporter());
   }
 };

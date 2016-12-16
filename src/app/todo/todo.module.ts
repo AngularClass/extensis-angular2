@@ -17,6 +17,7 @@ var components = [
   ],
   exports: [
     ...components
-  ]
+  ],
+  providers: []
 })
 export class ToDoModule {}
